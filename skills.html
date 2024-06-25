@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Skills</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-SnSR2U8dR9jXqFRe3ctFZu9UCbJwqFTuwFG4+Zgp4tDkxKPg8QR5lW8oy3ANfYzCTTe7L+JWx/ZcQeSUIp+U6g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #403d39;
+        overflow: hidden;
+      }
+
+      .nav-icon {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        cursor: pointer;
+        z-index: 1;
+      }
+
+      .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #252422;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #ccc5b9;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidenav a:hover {
+        color: #fffcf2;
+      }
+
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+      img {
+        width: 50px;
+      }
+      li {
+        font-size: 30px;
+      }
+      .table-container {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        top: 200px;
+      }
+      .table-container table {
+        width: 30%;
+        height: 20px;
+        margin: 30px;
+      }
+
+      .table-container th {
+        padding: 25px;
+        background-color: #eb5e28;
+        color: #fffcf2;
+        font-size: 35px;
+        border-radius: 30px;
+      }
+      .table-container td {
+        font-size: 28px;
+        padding: 13px;
+        text-align: center;
+        color: #fffcf2;
+      }
+      .arrow-container {
+        display: inline-block;
+        position: relative;
+        left: 1630px;
+        top: 270px;
+      }
+
+      .arrow-icon {
+        font-size: 50px;
+        color: #fffcf2;
+        transition: all 0.3s ease;
+      }
+
+      .arrow-container:hover .arrow-icon {
+        color: #403d39;
+      }
+
+      .arrow-container:hover::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: #eb5e28;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+      }
+
+      .arrow-container:hover::before {
+        width: 70px;
+        height: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="icon/1.png "
+      alt="Open Navigation"
+      class="nav-icon"
+      onclick="openNav()"
+    />
+
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="home.html">Home</a>
+      <a href="aboutme.html">About me</a>
+      <a href="education.html">Education</a>
+      <a href="skills.html">Skills</a>
+      <a href="course.html">Courses</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+
+    <div class="table-container">
+      <table>
+        <tr>
+          <th>Data Structures <i class="fas fa-laptop"></i></th>
+        </tr>
+        <tr>
+          <td>C</td>
+        </tr>
+        <tr>
+          <td>C++</td>
+        </tr>
+        <tr>
+          <td>Python</td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <th>Web Technology <i class="fas fa-globe"></i></th>
+        </tr>
+        <tr>
+          <td>HTML</td>
+        </tr>
+        <tr>
+          <td>CSS</td>
+        </tr>
+        <tr>
+          <td>JavaScript</td>
+        </tr>
+        <tr>
+          <td>PHP</td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <th>DBMS <i class="fas fa-database"></i></th>
+        </tr>
+        <tr>
+          <td>SQL</td>
+        </tr>
+      </table>
+    </div>
+    <div class="arrow-container">
+      <a href="course.html"><i class="fas fa-arrow-down arrow-icon"></i></a>
+    </div>
+  </body>
+</html>

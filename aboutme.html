@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aaryan Nerla</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #403d39;
+        overflow: hidden;
+      }
+
+      .nav-icon {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        cursor: pointer;
+        z-index: 1;
+      }
+
+      .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #252422;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #ccc5b9;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidenav a:hover {
+        color: #fffcf2;
+      }
+
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+      .arrow-container {
+        display: inline-block;
+        position: relative;
+        left: 1630px;
+        bottom: 230px;
+      }
+
+      .arrow-icon {
+        font-size: 50px;
+        color: #fffcf2;
+        transition: all 0.3s ease;
+      }
+
+      .arrow-container:hover .arrow-icon {
+        color: #403d39;
+      }
+
+      .arrow-container:hover::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: #eb5e28;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+      }
+
+      .arrow-container:hover::before {
+        width: 70px;
+        height: 70px;
+      }
+      .box {
+        padding: 20px;
+        width: 400px;
+        height: auto;
+        background-color: #eb5e28;
+        text-align: center;
+        font-size: 20px;
+        position: relative;
+        top: 220px;
+        left: 830px;
+        line-height: 30px;
+        border-radius: 30px;
+      }
+      .profilepic {
+        position: relative;
+        bottom: 350px;
+        left: 480px;
+      }
+      h2,
+      p {
+        color: #fffcf2;
+      }
+      .Me img {
+        position: relative;
+        bottom: 1020px;
+        left: 1150px;
+        width: 350px;
+      }
+      .Aboutme img {
+        width: 350px;
+        position: relative;
+        bottom: 900px;
+        left: 220px;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="icon/1.png"
+      alt="Open Navigation"
+      class="nav-icon"
+      onclick="openNav()"
+      width="50px"
+    />
+
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="home.html">Home</a>
+      <a href="aboutme.html">About me</a>
+      <a href="education.html">Education</a>
+      <a href="skills.html">Skills</a>
+      <a href="course.html">Courses</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+    <div class="W">
+      <div class="box">
+        <h2>Aaryan Nerla</h2>
+        <h2>Age:19</h2>
+        <h2>Date of Birth: 08/10/2004</h2>
+        <p>
+          Studying Computer Science Engineering at SRM University AP, with
+          certifications in Python, Human Factors Engineering, Cybersecurity,
+          and Robotics. Looking forward to learning advanced technologies and
+          building futuristic solutions.
+        </p>
+      </div>
+      <div class="profilepic">
+        <img
+          src="profile.jpg"
+          alt="profilepic"
+          width="350"
+          style="border-radius: 30px"
+        />
+      </div>
+    </div>
+    <div class="arrow-container">
+      <a href="education.html"><i class="fas fa-arrow-down arrow-icon"></i></a>
+    </div>
+
+    <div class="Me">
+      <img src="img/4.png" alt="" />
+    </div>
+    <div class="Aboutme">
+      <img src="img/5.png" alt="" />
+    </div>
+  </body>
+</html>

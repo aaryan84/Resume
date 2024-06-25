@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certificate Previews</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <style>
+    body {
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #403d39;
+    }
+    .nav-icon {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        cursor: pointer;
+        z-index: 1;
+      }
+
+      .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #252422;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #ccc5b9;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidenav a:hover {
+        color: #fffcf2;
+      }
+
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+      .arrow-container {
+        display: inline-block;
+        position: relative;
+        left: 220px;
+        top: 320px;
+      }
+
+      .arrow-icon {
+        font-size: 50px;
+        color: #fffcf2;
+        transition: all 0.3s ease;
+      }
+
+      .arrow-container:hover .arrow-icon {
+        color: #403d39;
+      }
+
+      .arrow-container:hover::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: #eb5e28;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+      }
+
+      .arrow-container:hover::before {
+        width: 70px;
+        height: 70px;
+      }
+    .container {
+      margin-top: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: auto;
+    }
+
+    .certificate-cell {
+      padding: 10px;
+      text-align: center;
+     
+      position: relative;
+    }
+
+    .certificate-preview {
+      display: inline-block;
+      width: 100px; /* Adjust width of preview image */
+      height: auto;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .certificate-preview img {
+      width: 100%;
+      height: auto;
+    }
+
+    .preview-overlay {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      display: none;
+      width: 800px; /* Adjust width of enlarged image */
+      height: auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    p {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #333;
+    }
+    th{
+      text-align: left;
+      font-size: 25px;
+      padding-right: 50px;
+      color: #fffcf2;
+    }
+    th a{
+      color: #eb5e28;
+    }
+  </style>
+  <body>
+    <img
+      src="icon/1.png"
+      alt="Open Navigation"
+      class="nav-icon"
+      onclick="openNav()"
+      width="50px"
+    />
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="home.html">Home</a>
+      <a href="aboutme.html">About me</a>
+      <a href="education.html">Education</a>
+      <a href="skills.html">Skills</a>
+      <a href="course.html">Courses</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="container">
+      <table>
+        <tr>
+          <th>
+            Foundations of cybersecurity from
+            <a
+              href="https://www.coursera.org/learn/foundations-of-cybersecurity"
+              target="_blank"
+              >Coursera
+            </a>
+          </th>
+          <td class="certificate-cell">
+            <div class="certificate-preview">
+              <img
+                src="img/Cyber Security.jpg"
+                alt="Certificate 1"
+                data-large-src="img/Cyber Security.jpg"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            21st Century Employability Skills Program - Advanced from
+            <a
+              href="https://wadhwanifoundation.org/programs/employability-skills/"
+              target="_blank"
+              >Wadhwani Foundation
+            </a>
+          </th>
+          <td class="certificate-cell">
+            <div class="certificate-preview">
+              <img
+                src="img/Emplayability skills.jpg"
+                alt="Certificate 2"
+                data-large-src="img/Emplayability skills.jpg"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Human Factors Engineering from
+            <a
+              href="https://onlinecourses.nptel.ac.in/noc24_mg108/preview"
+              target="_blank"
+              >NPTEL
+            </a>
+          </th>
+          <td class="certificate-cell">
+            <div class="certificate-preview">
+              <img
+                src="img/Human Factors Engineering.jpg"
+                alt="Certificate 2"
+                data-large-src="img/Human Factors Engineering.jpg"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            The Joy of Computing Using Python from
+            <a
+              href="https://onlinecourses.nptel.ac.in/noc24_cs113/preview"
+              target="_blank"
+              >NPTEL
+            </a>
+          </th>
+          <td class="certificate-cell">
+            <div class="certificate-preview">
+              <img
+                src="img/Python.jpg"
+                alt="Certificate 2"
+                data-large-src="img/Python.jpg"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            The way to Prompt Engineering
+            <a href="https://certifier.io/" target="_blank">Certifier </a>
+            </a>
+          </th>
+          <td class="certificate-cell">
+            <div class="certificate-preview">
+              <img
+                src="img/prompt engineering.jpg"
+                alt="Certificate 2"
+                data-large-src="img/prompt engineering.jpg"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Robotics from
+            <a href="https://teachnook.com/" target="_blank">Teachnook </a><br />
+          </th>
+          <td class="certificate-cell">
+            <div class="certificate-preview">
+              <img
+                src="img/Robotics.jpg"
+                alt="Certificate 2"
+                data-large-src="img/Robotics.jpg"
+              />
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+      $(document).ready(function () {
+        $(".certificate-preview").hover(
+          function () {
+            // On hover in
+            var $this = $(this);
+            var largeImageSrc = $this.find("img").data("large-src");
+            if (!$this.find(".preview-overlay").length) {
+              $this.append(
+                '<div class="preview-overlay"><img src="' +
+                  largeImageSrc +
+                  '" alt="Large Image Preview"></div>'
+              );
+            }
+            $this.find(".preview-overlay").fadeIn(200);
+          },
+          function () {
+            // On hover out
+            $(this)
+              .find(".preview-overlay")
+              .fadeOut(200, function () {
+                $(this).remove();
+              });
+          }
+        );
+      });
+    </script>
+
+<div class="arrow-container">
+  <a href="contact.html"><i class="fas fa-arrow-down arrow-icon"></i></a>
+</div>
+  </body>
+</html>
